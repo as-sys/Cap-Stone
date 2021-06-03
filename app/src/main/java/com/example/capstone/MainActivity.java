@@ -1,16 +1,26 @@
-package com.example.capstone;
+package com.example.Cap Stone;
 
+import java.text.NumberFormat;
+import java.util.jar.Attributes;
+
+import android.content.Intent;
+import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     /**
-     * Setting GLobal Variable
+     * Setting Global Variable
      */
 
     int quantity = 0;
@@ -25,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked
      */
-    public void sumbitOrder(View view) {
+    public void submitOrder(View view) {
         //Get text form the EditText XML
         EditText nameField = (EditText) findViewById(R.id.name_field);
         String name = nameField.getText().toString();
@@ -57,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
         // Display the order summary on the screen
         String priceMessage = createOrderSummary(name, price, hasPcCleaned, thermalPasteChange, cpuChange, gpuChange);
         displayMessage(priceMessage);
-
-        displayMessage(priceMessage);
-
     }
 
     /**
@@ -69,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
      * @param thermalPasteChange
      * @param cpuChange
      * @param gpuChange
-     *
      */
     private int calculatePrice(Boolean hasPcCleaned, boolean thermalPasteChange, boolean cpuChange, boolean gpuChange) {
         int basePrice = 20;
@@ -103,37 +109,44 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Create a summary of our order
      *
-     * @param name of the customer
-     * @param price of the order
+     * @param name               of the customer
+     * @param price              of the order
      * @param hasPcCleaned
      * @param thermalPasteChange
      * @param cpuChange
      * @param gpuChange
      * @return priceMessage
      */
-private String createOrderSummary(String name, int price, Boolean hasPcCleaned, boolean thermalPasteChange, boolean cpuChange, boolean gpuChange) {
+    private String createOrderSummary(String name, int price, Boolean hasPcCleaned, boolean thermalPasteChange, boolean cpuChange, boolean gpuChange) {
 
-    String priceMessage = "Name: " + name;
-    priceMessage += "\nThank you for ordering " + quantity + " Coffees!";  //I used the escape key \n to put info on a new line
-    priceMessage += "\nPC Cleaned For $10? " + hasPcCleaned;
-    priceMessage += "\nThermal Paste Changed For %15? " + thermalPasteChange;
-    priceMessage += "\nCPU Changed For $20? " + cpuChange;
-    priceMessage += "\nGPU Changed For $15? " + gpuChange;
-    priceMessage += "\nAmount Due: $" + price;
-    priceMessage += "\n\nWe Will Get To Your Order As Soon As Possible"; //Double \n escape key for w line separation
-    return priceMessage;
+        String priceMessage = "Name: " + name;
+        priceMessage += "\nThank you for ordering " + quantity + " Coffees!";  //I used the escape key \n to put info on a new line
+        priceMessage += "\nPC Cleaned For $10? " + hasPcCleaned;
+        priceMessage += "\nThermal Paste Changed For %15? " + thermalPasteChange;
+        priceMessage += "\nCPU Changed For $20? " + cpuChange;
+        priceMessage += "\nGPU Changed For $15? " + gpuChange;
+        priceMessage += "\nAmount Due: $" + price;
+        priceMessage += "\n\nWe Will Get To Your Order As Soon As Possible"; //Double \n escape key for w line separation
+        return priceMessage;
 
-    /**
-     * This method displays the given quantity value on the screen
-     */
+        /**
+         * This method displays the given quantity value on the screen
+         */
 
-    private void displayQuantity(int ) {
+        private void displayQuantity(int) {
+                TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+                quantityTextView.setText("" + quantity);
+        }
 
+        /**
+         * This method displays the given text on the screen
+         */
+
+        private void displayMessage(String message) {
+            TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+            orderSummaryTextView.setText(message);
+        }
     }
-}
-
-
-
 
 
 }
