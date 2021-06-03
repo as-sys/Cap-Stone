@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:paddingLeft="24dp"
-            android:text="PC Clean" />
+            android:text="PC Clean For $10" />
 
         <CheckBox
             android:id="@+id/thermal_paste_checkbox"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:paddingLeft="24dp"
-            android:text="Thermal Paste Change" />
+            android:text="Thermal Paste Change For $15" />
 
         <CheckBox
             android:id="@+id/cpu_change_checkbox"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:paddingLeft="24dp"
-            android:text="CPU Upgrade" />
+            android:text="CPU Upgrade for $20" />
 
         <CheckBox
             android:id="@+id/gpu_change_checkbox"
@@ -56,6 +56,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:paddingLeft="24dp"
+<<<<<<< HEAD
             android:text="GPU Upgrade" />
 
         <TextView
@@ -65,9 +66,39 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="PC Admission Service Price: $20" />
+=======
+            android:text="GPU Upgrade For $15" />
+>>>>>>> main
 
 
 
+<<<<<<< HEAD
+=======
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Sumbit Order" />
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="sumbitorder"
+            android:text="Place Order" />
+
+
+
+>>>>>>> main
     </LinearLayout>
 
 </ScrollView>
