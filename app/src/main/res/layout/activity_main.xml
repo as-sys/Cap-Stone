@@ -58,9 +58,16 @@
             android:paddingLeft="24dp"
             android:text="GPU Upgrade" />
 
+        <TextView
+            android:id="@+id/pc_service_base_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="PC Admission Service Price: $20" />
+
 
 
     </LinearLayout>
-
 
 </ScrollView>
